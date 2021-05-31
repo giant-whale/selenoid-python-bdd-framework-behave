@@ -50,3 +50,7 @@ Select browser:
 
 Generate JUnit report:
 - Execute command `behave --junit` to run all tests and generate JUnit report files in directory `./reports`.
+
+## Human-readable report from JUnit XML
+1. Install using pip junit2html — `pip install junit2html`
+2. Run command `junit2html junit_report_file.xml junit_humanreadable_report.html`
