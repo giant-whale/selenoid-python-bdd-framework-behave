@@ -4,7 +4,7 @@ from pages.yahoo.yahoo_main_page import YahooMainPage
 from pages.yahoo.yahoo_search_page import YahooSearchPage
 
 
-@given(u'I open Yahoo main page')
+@given('I open Yahoo main page')
 def step_given_open_yahoo_main_page(context):
     context.yahoo_main_page = YahooMainPage().open()
 
