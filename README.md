@@ -1,6 +1,8 @@
 # Python BDD framework for Selenoid
 This is a python BDD (Behave) framework (with PageObject) for Selenoid hub, replacement of Selenium hub. 
 
+This framework support multithreading running.
+
 Read more about Selenoid — https://aerokube.com/selenoid/
 Read more about Behave — https://behave.readthedocs.io/
 
@@ -19,7 +21,7 @@ For running tests in debug mode, create new configuration:
 3. Fill fields: 
 ```
 Name = Behave
-Script Path = selenoid-python-bdd-framework-behave/.env/lib/python3.8/site-packages/behave/__main__.py
+Script Path = selenoid-python-bdd-framework-behave/behave_runner.py
 ```
 For Script Path it's better to use files explorer button and locate your virtual environment behave `__main__.py`
 
@@ -41,12 +43,12 @@ To add more mobile devices:
 
 ## Run your tests
 Multiple threads:
-- Single-thread — execute command `behave` to run all tests in 1 thread;
-- Multi-thread — execute command ...
+- Single-thread — execute command `python behave_runner.py` to run all tests in 1 thread;
+- Multi-thread — execute command `python behave_runner.py --threads=5` to run all tests in 5 threads — 1 thread per feature.
 
 Select browser:
-- Execute command `behave -D browser=chrome` to run all tests using Google Chrome. Also, it's declared as default browser, so there is no need to use this command — you can use `behave` instead;
-- Execute command `behave -D browser=firefox` to run all tests using Mozilla Firefox;
+- Execute command `python behave_runner.py -D browser=chrome` to run all tests using Google Chrome. Also, it's declared as default browser, so there is no need to use this command — you can use `behave` instead;
+- Execute command `python behave_runner.py -D browser=firefox` to run all tests using Mozilla Firefox;
 
 Generate JUnit report:
-- Execute command `behave --junit` to run all tests and generate JUnit report files in directory `./reports`.
+- Execute command `python behave_runner.py --junit` to run all tests and generate JUnit report files in directory `./reports`.
