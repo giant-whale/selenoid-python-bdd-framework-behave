@@ -8,7 +8,7 @@ Feature: Yahoo Search Page contains weather results after opening from the main 
     Examples: US
         | city_name       |
         | New York        |
-        | City Not Exists |
+        | Denver          |
 
     Examples: Germany
         | city_name       |
