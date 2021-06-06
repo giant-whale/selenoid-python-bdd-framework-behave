@@ -1,4 +1,4 @@
-Feature: Yahoo Search Page contains weather results after opening from the main page
+Feature: Desktop - Yahoo Search Page contains weather results after opening from the main page
 
   Scenario Outline: Search City and find its weather in the results
     Given I open Yahoo main page
