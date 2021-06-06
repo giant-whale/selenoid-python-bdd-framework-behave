@@ -1,6 +1,8 @@
 from core.locator import Locator
 from core.page import Page
 
+from pages.yahoo.yahoo_components_mobile import YahooSearchBarMobile
+
 
 class YahooMainPageMobile(Page):
     BASE_PAGE_URL = "https://www.yahoo.com/"
@@ -18,3 +20,5 @@ class YahooMainPageMobile(Page):
             return True
         else:
             return False
+
+    YahooSearchBarMobile = YahooSearchBarMobile()
