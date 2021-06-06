@@ -7,7 +7,10 @@ def before_all(context):
 
 
 def before_feature(context, feature):
-    pass
+    if feature.name.startswith('Mobile - '):
+        context.is_mobile = True
+    else:
+        context.is_mobile = False
 
 
 def before_scenario(context, scenario):

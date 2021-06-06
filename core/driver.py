@@ -34,7 +34,6 @@ class Driver(Remote, metaclass=Singleton):
 @fixture
 def get_driver(context):
     # driver setup start
-    mobile = False
 
     browser = context.config.userdata.get('browser')
     vnc = bool(context.config.userdata.get('vnc') == 'true')
@@ -44,14 +43,14 @@ def get_driver(context):
 
     if browser == 'chrome':
         chrome_options = ChromeOptions()
-        if mobile:
+        if context.is_mobile:
             chrome_options.add_experimental_option('mobileEmulation', device_iphone8)
         browser_capabilities = chrome_options.to_capabilities()
         browser_capabilities['version'] = CHROME['browserVersion']
 
     elif browser == 'firefox':
         browser_capabilities = FIREFOX
-        if mobile:
+        if context.is_mobile:
             raise DriverSetupException('Unable to use mobile emulation with Firefox - use Chrome instead')
 
     if vnc:

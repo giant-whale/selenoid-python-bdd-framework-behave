@@ -35,12 +35,17 @@ List of available browsers in `core/browsers.py`. To add and use more browsers, 
 ## Mobile Emulation
 Mobile emulation is available only for Google Chrome. 
 
-Usage:  
+Usage: write new feature name with `Mobile - ` at the start — it will set mobile emulation.
+
+Example:
+
+`Mobile - check productivity` will run with mobile emulation.
+
+`Check productivity on mobile` will run without mobile emulation (desktop mode, by default). 
 
 To add more mobile devices:
-1. ...
-2. Add new devices in `core/mobile_emulation.py`;
-3. ... 
+1. Add new devices in `core/mobile_emulation.py`;
+2. Add new keywords in `features/environment.py` and your features. 
 
 ## Run your tests
 Multiple threads:
